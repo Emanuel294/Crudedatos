@@ -38,6 +38,7 @@ namespace ClasesVirtualesProgramacion
         }
 
         public bool SelectData(string SQL,DataTable Tabla )
+
         {
             bool ejecucionCorrecta = false;
             if (this.AbrirConexion() == true)
@@ -51,6 +52,28 @@ namespace ClasesVirtualesProgramacion
                 catch(MySqlException Exception)
                 {
                     MessageBox.Show(Exception.Message, "Error en SQL", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ejecucionCorrecta = false;
+                }
+            }
+            return ejecucionCorrecta;
+        }
+
+        public bool AccionSQL(string SQL)
+        {
+            bool ejecucionCorrecta = false;
+            if (this.AbrirConexion() == true)
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(SQL, oConexion);
+                    cmd.ExecuteNonQuery();
+                    ejecucionCorrecta = true;
+
+                }
+                catch (MySqlException Exception)
+                {
+
+                    MessageBox.Show(Exception.Message, "Error en SQL de acción", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ejecucionCorrecta = false;
                 }
             }

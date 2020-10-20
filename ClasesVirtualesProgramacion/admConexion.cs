@@ -36,5 +36,25 @@ namespace ClasesVirtualesProgramacion
             }
             return conectado;
         }
+
+        public bool SelectData(string SQL,DataTable Tabla )
+        {
+            bool ejecucionCorrecta = false;
+            if (this.AbrirConexion() == true)
+            {
+                try
+                {
+                    MySqlDataAdapter da = new MySqlDataAdapter(SQL, oConexion);
+                    da.Fill(Tabla);
+                    ejecucionCorrecta = true;
+                }
+                catch(MySqlException Exception)
+                {
+                    MessageBox.Show(Exception.Message, "Error en SQL", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ejecucionCorrecta = false;
+                }
+            }
+            return ejecucionCorrecta;
+        }
     }
 }

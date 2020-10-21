@@ -12,6 +12,7 @@ namespace ClasesVirtualesProgramacion.Dialogs
 {
     public partial class baseDialog : Form
     {
+        protected ErrorProvider erp = new ErrorProvider();
         public baseDialog()
         {
             InitializeComponent();
@@ -20,6 +21,19 @@ namespace ClasesVirtualesProgramacion.Dialogs
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        protected virtual bool ValidarEntrada()
+        {
+            return true;
+        }
+        public bool NotificacionDeValidacion(string message, Control objeto)
+        {
+            MessageBox.Show(message, "Informacion sin ingresar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (objeto != null)
+                objeto.Focus();
+            erp.SetError(objeto, message);
+            return false;
         }
     }
 }

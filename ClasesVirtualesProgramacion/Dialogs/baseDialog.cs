@@ -35,5 +35,13 @@ namespace ClasesVirtualesProgramacion.Dialogs
             erp.SetError(objeto, message);
             return false;
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (ValidarEntrada() == false)
+                return;
+
+            DialogResult = DialogResult.OK;
+        }
     }
 }

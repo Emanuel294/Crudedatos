@@ -65,6 +65,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admConexion.cs" />
+    <Compile Include="Data\dsClasesVirtuales.cs">
+      <DependentUpon>dsClasesVirtuales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsClasesVirtuales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsClasesVirtuales.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\baseDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +99,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Data\dsClasesVirtuales.xsc">
+      <DependentUpon>dsClasesVirtuales.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsClasesVirtuales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsClasesVirtuales.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\dsClasesVirtuales.xss">
+      <DependentUpon>dsClasesVirtuales.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,7 +136,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="Forms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

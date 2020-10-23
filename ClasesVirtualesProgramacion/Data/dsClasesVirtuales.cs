@@ -1,4 +1,8 @@
-﻿namespace ClasesVirtualesProgramacion.Data {
+﻿namespace ClasesVirtualesProgramacion.Data
+{
+}
+
+namespace ClasesVirtualesProgramacion.Data {
     
     
     public partial class dsClasesVirtuales {

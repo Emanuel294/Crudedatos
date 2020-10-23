@@ -48,6 +48,7 @@ namespace ClasesVirtualesProgramacion
                     MySqlDataAdapter da = new MySqlDataAdapter(SQL, oConexion);
                     da.Fill(Tabla);
                     ejecucionCorrecta = true;
+                    oConexion.Close();
                 }
                 catch(MySqlException Exception)
                 {
@@ -68,7 +69,7 @@ namespace ClasesVirtualesProgramacion
                     MySqlCommand cmd = new MySqlCommand(SQL, oConexion);
                     cmd.ExecuteNonQuery();
                     ejecucionCorrecta = true;
-
+                    oConexion.Close();
                 }
                 catch (MySqlException Exception)
                 {
@@ -76,6 +77,7 @@ namespace ClasesVirtualesProgramacion
                     MessageBox.Show(Exception.Message, "Error en SQL de acción", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ejecucionCorrecta = false;
                 }
+
             }
             return ejecucionCorrecta;
         }

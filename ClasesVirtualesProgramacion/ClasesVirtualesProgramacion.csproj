@@ -79,6 +79,12 @@
     <Compile Include="Dialogs\baseDialog.Designer.cs">
       <DependentUpon>baseDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\EstudianteDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EstudianteDialog.Designer.cs">
+      <DependentUpon>EstudianteDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Dialogs\baseDialog.resx">
       <DependentUpon>baseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EstudianteDialog.resx">
+      <DependentUpon>EstudianteDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmEstudiantesList.resx">
       <DependentUpon>frmEstudiantesList.cs</DependentUpon>

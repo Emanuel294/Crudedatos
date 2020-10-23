@@ -33,15 +33,6 @@
             this.dsClasesVirtuales = new ClasesVirtualesProgramacion.Data.dsClasesVirtuales();
             this.estudiantesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estudiantesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.estudiantesDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.cmbBuscarPor = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -53,6 +44,15 @@
             this.btnSeleccionar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnMostrarTodos = new System.Windows.Forms.ToolStripButton();
+            this.estudiantesDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -102,6 +102,79 @@
             this.estudiantesBindingNavigator.Size = new System.Drawing.Size(822, 25);
             this.estudiantesBindingNavigator.TabIndex = 0;
             this.estudiantesBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(66, 22);
+            this.toolStripLabel1.Text = "Buscar por:";
+            // 
+            // cmbBuscarPor
+            // 
+            this.cmbBuscarPor.Items.AddRange(new object[] {
+            "Identidad",
+            "Nombres",
+            "Apellidos"});
+            this.cmbBuscarPor.Name = "cmbBuscarPor";
+            this.cmbBuscarPor.Size = new System.Drawing.Size(121, 25);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(46, 22);
+            this.toolStripLabel2.Text = "Criterio";
+            // 
+            // txtCriterio
+            // 
+            this.txtCriterio.Name = "txtCriterio";
+            this.txtCriterio.Size = new System.Drawing.Size(100, 25);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(46, 22);
+            this.btnBuscar.Text = "Buscar";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnSeleccionar.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.Image")));
+            this.btnSeleccionar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(71, 22);
+            this.btnSeleccionar.Text = "Seleccionar";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnMostrarTodos
+            // 
+            this.btnMostrarTodos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnMostrarTodos.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarTodos.Image")));
+            this.btnMostrarTodos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnMostrarTodos.Name = "btnMostrarTodos";
+            this.btnMostrarTodos.Size = new System.Drawing.Size(85, 22);
+            this.btnMostrarTodos.Text = "Mostrar todos";
             // 
             // estudiantesDataGridView
             // 
@@ -187,79 +260,6 @@
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(66, 22);
-            this.toolStripLabel1.Text = "Buscar por:";
-            // 
-            // cmbBuscarPor
-            // 
-            this.cmbBuscarPor.Items.AddRange(new object[] {
-            "Identidad",
-            "Nombres",
-            "Apellidos"});
-            this.cmbBuscarPor.Name = "cmbBuscarPor";
-            this.cmbBuscarPor.Size = new System.Drawing.Size(121, 25);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(46, 22);
-            this.toolStripLabel2.Text = "Criterio";
-            // 
-            // txtCriterio
-            // 
-            this.txtCriterio.Name = "txtCriterio";
-            this.txtCriterio.Size = new System.Drawing.Size(100, 25);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(46, 22);
-            this.btnBuscar.Text = "Buscar";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnSeleccionar.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.Image")));
-            this.btnSeleccionar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(71, 22);
-            this.btnSeleccionar.Text = "Seleccionar";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnMostrarTodos
-            // 
-            this.btnMostrarTodos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnMostrarTodos.Image = ((System.Drawing.Image)(resources.GetObject("btnMostrarTodos.Image")));
-            this.btnMostrarTodos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnMostrarTodos.Name = "btnMostrarTodos";
-            this.btnMostrarTodos.Size = new System.Drawing.Size(85, 22);
-            this.btnMostrarTodos.Text = "Mostrar todos";
-            // 
             // btnNuevo
             // 
             this.btnNuevo.Location = new System.Drawing.Point(24, 242);
@@ -308,7 +308,7 @@
             this.Controls.Add(this.estudiantesDataGridView);
             this.Controls.Add(this.estudiantesBindingNavigator);
             this.Name = "frmEstudiantesList";
-            this.Text = "frmEstudiantesList";
+            this.Text = "Lista de estudiantes";
             this.Load += new System.EventHandler(this.frmEstudiantesList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dsClasesVirtuales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudiantesBindingSource)).EndInit();

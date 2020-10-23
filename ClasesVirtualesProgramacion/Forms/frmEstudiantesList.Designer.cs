@@ -309,6 +309,7 @@
             this.Controls.Add(this.estudiantesBindingNavigator);
             this.Name = "frmEstudiantesList";
             this.Text = "frmEstudiantesList";
+            this.Load += new System.EventHandler(this.frmEstudiantesList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dsClasesVirtuales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudiantesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudiantesBindingNavigator)).EndInit();

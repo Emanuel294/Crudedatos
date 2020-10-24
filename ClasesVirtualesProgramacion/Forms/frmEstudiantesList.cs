@@ -25,5 +25,11 @@ namespace ClasesVirtualesProgramacion.Forms
             if(oConexion.SelectData(SelectSQL, dsClasesVirtuales.Estudiantes) != true)
                 MessageBox.Show("No se ha podido cargar ningun dato de estudiantes, contacte el departamento de desarrollo tecnico", "Sin datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Dialogs.EstudianteDialog frmNuevo = new Dialogs.EstudianteDialog();
+            frmNuevo.ShowDialog();
+        }
     }
 }

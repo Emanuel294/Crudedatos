@@ -89,6 +89,7 @@
             // 
             // nombresTextBox
             // 
+            this.nombresTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nombresTextBox.Location = new System.Drawing.Point(119, 47);
             this.nombresTextBox.Name = "nombresTextBox";
             this.nombresTextBox.Size = new System.Drawing.Size(200, 20);
@@ -105,6 +106,7 @@
             // 
             // apellidosTextBox
             // 
+            this.apellidosTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.apellidosTextBox.Location = new System.Drawing.Point(402, 47);
             this.apellidosTextBox.Name = "apellidosTextBox";
             this.apellidosTextBox.Size = new System.Drawing.Size(223, 20);
@@ -158,6 +160,7 @@
             // 
             // direccionTextBox
             // 
+            this.direccionTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.direccionTextBox.Location = new System.Drawing.Point(119, 74);
             this.direccionTextBox.Multiline = true;
             this.direccionTextBox.Name = "direccionTextBox";
@@ -175,6 +178,7 @@
             // 
             // obsTextBox
             // 
+            this.obsTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.obsTextBox.Location = new System.Drawing.Point(119, 144);
             this.obsTextBox.Multiline = true;
             this.obsTextBox.Name = "obsTextBox";

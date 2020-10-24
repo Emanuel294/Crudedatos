@@ -55,10 +55,12 @@
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(449, 214);
+            this.btnGuardar.TabIndex = 7;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(550, 214);
+            this.btnCancelar.TabIndex = 8;
             // 
             // identidadLabel
             // 
@@ -74,7 +76,7 @@
             this.identidadTextBox.Location = new System.Drawing.Point(119, 21);
             this.identidadTextBox.Name = "identidadTextBox";
             this.identidadTextBox.Size = new System.Drawing.Size(127, 20);
-            this.identidadTextBox.TabIndex = 4;
+            this.identidadTextBox.TabIndex = 0;
             // 
             // nombresLabel
             // 
@@ -90,7 +92,7 @@
             this.nombresTextBox.Location = new System.Drawing.Point(119, 47);
             this.nombresTextBox.Name = "nombresTextBox";
             this.nombresTextBox.Size = new System.Drawing.Size(200, 20);
-            this.nombresTextBox.TabIndex = 6;
+            this.nombresTextBox.TabIndex = 3;
             // 
             // apellidosLabel
             // 
@@ -106,7 +108,7 @@
             this.apellidosTextBox.Location = new System.Drawing.Point(402, 47);
             this.apellidosTextBox.Name = "apellidosTextBox";
             this.apellidosTextBox.Size = new System.Drawing.Size(223, 20);
-            this.apellidosTextBox.TabIndex = 8;
+            this.apellidosTextBox.TabIndex = 4;
             // 
             // fechanacLabel
             // 
@@ -122,8 +124,8 @@
             this.fechanacDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechanacDateTimePicker.Location = new System.Drawing.Point(320, 21);
             this.fechanacDateTimePicker.Name = "fechanacDateTimePicker";
-            this.fechanacDateTimePicker.Size = new System.Drawing.Size(85, 20);
-            this.fechanacDateTimePicker.TabIndex = 10;
+            this.fechanacDateTimePicker.Size = new System.Drawing.Size(99, 20);
+            this.fechanacDateTimePicker.TabIndex = 1;
             // 
             // sexoLabel
             // 
@@ -143,7 +145,7 @@
             this.sexoComboBox.Location = new System.Drawing.Point(477, 21);
             this.sexoComboBox.Name = "sexoComboBox";
             this.sexoComboBox.Size = new System.Drawing.Size(148, 21);
-            this.sexoComboBox.TabIndex = 12;
+            this.sexoComboBox.TabIndex = 2;
             // 
             // direccionLabel
             // 
@@ -160,7 +162,7 @@
             this.direccionTextBox.Multiline = true;
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(506, 64);
-            this.direccionTextBox.TabIndex = 14;
+            this.direccionTextBox.TabIndex = 5;
             // 
             // obsLabel
             // 
@@ -177,7 +179,7 @@
             this.obsTextBox.Multiline = true;
             this.obsTextBox.Name = "obsTextBox";
             this.obsTextBox.Size = new System.Drawing.Size(506, 64);
-            this.obsTextBox.TabIndex = 16;
+            this.obsTextBox.TabIndex = 6;
             // 
             // EstudianteDialog
             // 

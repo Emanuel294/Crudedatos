@@ -38,5 +38,10 @@ namespace ClasesVirtualesProgramacion.Dialogs
             
             return true;
         }
+
+        private void EstudianteDialog_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

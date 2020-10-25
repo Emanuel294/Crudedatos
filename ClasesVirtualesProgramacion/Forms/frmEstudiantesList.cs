@@ -29,7 +29,18 @@ namespace ClasesVirtualesProgramacion.Forms
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Dialogs.EstudianteDialog frmNuevo = new Dialogs.EstudianteDialog();
+            frmNuevo.identidadTextBox.Focus();
             frmNuevo.ShowDialog();
+            if (frmNuevo.DialogResult == DialogResult.OK)
+            {
+                string sqlInsert = string.Format("insert into estudiantes (identidad, nombres, apellidos, fechanac, sexo, direccion, obs) values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",frmNuevo.identidadTextBox.Text.Trim(), frmNuevo.nombresTextBox.Text.Trim(), frmNuevo.apellidosTextBox.Text.Trim(), frmNuevo.fechanacDateTimePicker.Value.ToString("yyyy-MM-dd"), frmNuevo.sexoComboBox.Text, frmNuevo.direccionTextBox.Text.Trim(), frmNuevo.obsTextBox.Text.Trim() );
+                if (oConexion.AccionSQL(sqlInsert) == true)
+                {
+                    this.frmEstudiantesList_Load(null, null);
+                    MessageBox.Show("La información de estudiante ha sido almacenada correctamente.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    estudiantesDataGridView.Focus();
+                }
+            }
         }
     }
 }

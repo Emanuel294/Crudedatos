@@ -71,13 +71,6 @@
             identidadLabel.TabIndex = 3;
             identidadLabel.Text = "Identidad:";
             // 
-            // identidadTextBox
-            // 
-            this.identidadTextBox.Location = new System.Drawing.Point(119, 21);
-            this.identidadTextBox.Name = "identidadTextBox";
-            this.identidadTextBox.Size = new System.Drawing.Size(127, 20);
-            this.identidadTextBox.TabIndex = 0;
-            // 
             // nombresLabel
             // 
             nombresLabel.AutoSize = true;
@@ -86,14 +79,6 @@
             nombresLabel.Size = new System.Drawing.Size(52, 13);
             nombresLabel.TabIndex = 5;
             nombresLabel.Text = "Nombres:";
-            // 
-            // nombresTextBox
-            // 
-            this.nombresTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.nombresTextBox.Location = new System.Drawing.Point(119, 47);
-            this.nombresTextBox.Name = "nombresTextBox";
-            this.nombresTextBox.Size = new System.Drawing.Size(200, 20);
-            this.nombresTextBox.TabIndex = 3;
             // 
             // apellidosLabel
             // 
@@ -104,14 +89,6 @@
             apellidosLabel.TabIndex = 7;
             apellidosLabel.Text = "Apellidos:";
             // 
-            // apellidosTextBox
-            // 
-            this.apellidosTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.apellidosTextBox.Location = new System.Drawing.Point(402, 47);
-            this.apellidosTextBox.Name = "apellidosTextBox";
-            this.apellidosTextBox.Size = new System.Drawing.Size(223, 20);
-            this.apellidosTextBox.TabIndex = 4;
-            // 
             // fechanacLabel
             // 
             fechanacLabel.AutoSize = true;
@@ -121,14 +98,6 @@
             fechanacLabel.TabIndex = 9;
             fechanacLabel.Text = "Nacimiento:";
             // 
-            // fechanacDateTimePicker
-            // 
-            this.fechanacDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechanacDateTimePicker.Location = new System.Drawing.Point(320, 21);
-            this.fechanacDateTimePicker.Name = "fechanacDateTimePicker";
-            this.fechanacDateTimePicker.Size = new System.Drawing.Size(99, 20);
-            this.fechanacDateTimePicker.TabIndex = 1;
-            // 
             // sexoLabel
             // 
             sexoLabel.AutoSize = true;
@@ -137,6 +106,55 @@
             sexoLabel.Size = new System.Drawing.Size(34, 13);
             sexoLabel.TabIndex = 11;
             sexoLabel.Text = "Sexo:";
+            // 
+            // direccionLabel
+            // 
+            direccionLabel.AutoSize = true;
+            direccionLabel.Location = new System.Drawing.Point(57, 77);
+            direccionLabel.Name = "direccionLabel";
+            direccionLabel.Size = new System.Drawing.Size(55, 13);
+            direccionLabel.TabIndex = 13;
+            direccionLabel.Text = "Direccion:";
+            // 
+            // obsLabel
+            // 
+            obsLabel.AutoSize = true;
+            obsLabel.Location = new System.Drawing.Point(34, 160);
+            obsLabel.Name = "obsLabel";
+            obsLabel.Size = new System.Drawing.Size(78, 13);
+            obsLabel.TabIndex = 15;
+            obsLabel.Text = "Observaciones";
+            // 
+            // identidadTextBox
+            // 
+            this.identidadTextBox.Location = new System.Drawing.Point(119, 21);
+            this.identidadTextBox.Name = "identidadTextBox";
+            this.identidadTextBox.Size = new System.Drawing.Size(127, 20);
+            this.identidadTextBox.TabIndex = 0;
+            // 
+            // nombresTextBox
+            // 
+            this.nombresTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.nombresTextBox.Location = new System.Drawing.Point(119, 47);
+            this.nombresTextBox.Name = "nombresTextBox";
+            this.nombresTextBox.Size = new System.Drawing.Size(200, 20);
+            this.nombresTextBox.TabIndex = 3;
+            // 
+            // apellidosTextBox
+            // 
+            this.apellidosTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.apellidosTextBox.Location = new System.Drawing.Point(402, 47);
+            this.apellidosTextBox.Name = "apellidosTextBox";
+            this.apellidosTextBox.Size = new System.Drawing.Size(223, 20);
+            this.apellidosTextBox.TabIndex = 4;
+            // 
+            // fechanacDateTimePicker
+            // 
+            this.fechanacDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechanacDateTimePicker.Location = new System.Drawing.Point(320, 21);
+            this.fechanacDateTimePicker.Name = "fechanacDateTimePicker";
+            this.fechanacDateTimePicker.Size = new System.Drawing.Size(99, 20);
+            this.fechanacDateTimePicker.TabIndex = 1;
             // 
             // sexoComboBox
             // 
@@ -149,15 +167,6 @@
             this.sexoComboBox.Size = new System.Drawing.Size(148, 21);
             this.sexoComboBox.TabIndex = 2;
             // 
-            // direccionLabel
-            // 
-            direccionLabel.AutoSize = true;
-            direccionLabel.Location = new System.Drawing.Point(57, 77);
-            direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new System.Drawing.Size(55, 13);
-            direccionLabel.TabIndex = 13;
-            direccionLabel.Text = "Direccion:";
-            // 
             // direccionTextBox
             // 
             this.direccionTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -166,15 +175,6 @@
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(506, 64);
             this.direccionTextBox.TabIndex = 5;
-            // 
-            // obsLabel
-            // 
-            obsLabel.AutoSize = true;
-            obsLabel.Location = new System.Drawing.Point(34, 160);
-            obsLabel.Name = "obsLabel";
-            obsLabel.Size = new System.Drawing.Size(78, 13);
-            obsLabel.TabIndex = 15;
-            obsLabel.Text = "Observaciones";
             // 
             // obsTextBox
             // 
@@ -206,6 +206,7 @@
             this.Controls.Add(this.obsTextBox);
             this.Name = "EstudianteDialog";
             this.Text = "Información de estudiante";
+            this.Load += new System.EventHandler(this.EstudianteDialog_Load);
             this.Controls.SetChildIndex(this.obsTextBox, 0);
             this.Controls.SetChildIndex(obsLabel, 0);
             this.Controls.SetChildIndex(this.direccionTextBox, 0);
@@ -230,12 +231,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox identidadTextBox;
-        private System.Windows.Forms.TextBox nombresTextBox;
-        private System.Windows.Forms.TextBox apellidosTextBox;
-        private System.Windows.Forms.DateTimePicker fechanacDateTimePicker;
-        private System.Windows.Forms.ComboBox sexoComboBox;
-        private System.Windows.Forms.TextBox direccionTextBox;
-        private System.Windows.Forms.TextBox obsTextBox;
+        public System.Windows.Forms.TextBox identidadTextBox;
+        public System.Windows.Forms.TextBox nombresTextBox;
+        public System.Windows.Forms.TextBox apellidosTextBox;
+        public System.Windows.Forms.DateTimePicker fechanacDateTimePicker;
+        public System.Windows.Forms.ComboBox sexoComboBox;
+        public System.Windows.Forms.TextBox direccionTextBox;
+        public System.Windows.Forms.TextBox obsTextBox;
     }
 }

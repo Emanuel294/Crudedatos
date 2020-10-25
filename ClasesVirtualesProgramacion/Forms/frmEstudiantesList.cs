@@ -42,5 +42,33 @@ namespace ClasesVirtualesProgramacion.Forms
                 }
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if(estudiantesBindingSource.Count > 0)
+            {
+                Dialogs.EstudianteDialog frmEditar = new Dialogs.EstudianteDialog();
+                DataGridViewRow Fila = estudiantesDataGridView.CurrentRow;
+                Int16 ID = Int16.Parse(Fila.Cells[0].Value.ToString());
+                frmEditar.identidadTextBox.Text = Fila.Cells[1].Value.ToString();
+                frmEditar.nombresTextBox.Text = Fila.Cells[2].Value.ToString();
+                frmEditar.apellidosTextBox.Text = Fila.Cells[3].Value.ToString();
+                frmEditar.fechanacDateTimePicker.Value = Convert.ToDateTime(Fila.Cells[4].Value);
+                frmEditar.sexoComboBox.Text = Fila.Cells[5].Value.ToString();
+                frmEditar.direccionTextBox.Text = Fila.Cells[6].Value.ToString();
+                frmEditar.obsTextBox.Text = Fila.Cells[7].Value.ToString();
+                frmEditar.identidadTextBox.Focus();
+                frmEditar.ShowDialog();
+                if(frmEditar.DialogResult == DialogResult.OK)
+                {
+                    
+                }
+            }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

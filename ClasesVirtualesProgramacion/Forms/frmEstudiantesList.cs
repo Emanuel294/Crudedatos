@@ -61,7 +61,13 @@ namespace ClasesVirtualesProgramacion.Forms
                 frmEditar.ShowDialog();
                 if(frmEditar.DialogResult == DialogResult.OK)
                 {
-                    
+                    string sqlUpdate = string.Format("update estudiantes set identidad = '{0}', nombres = '{1}', apellidos = '{2}', fechanac = '{3}', sexo = '{4}', direccion = '{5}', obs = '{6}' where id={7} ", frmEditar.identidadTextBox.Text.Trim(), frmEditar.nombresTextBox.Text.Trim(), frmEditar.apellidosTextBox.Text.Trim(), frmEditar.fechanacDateTimePicker.Value.ToString("yyyy-MM-dd"), frmEditar.sexoComboBox.Text, frmEditar.direccionTextBox.Text.Trim(), frmEditar.obsTextBox.Text.Trim(), ID);
+                    if (oConexion.AccionSQL(sqlUpdate) == true)
+                    {
+                        this.frmEstudiantesList_Load(null, null);
+                        MessageBox.Show("La información del estudiante ha sido actualizada correctamente", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        estudiantesDataGridView.Focus();
+                    }
                 }
             }
         }

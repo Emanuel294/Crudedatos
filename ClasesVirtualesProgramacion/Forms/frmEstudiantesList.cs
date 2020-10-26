@@ -76,5 +76,29 @@ namespace ClasesVirtualesProgramacion.Forms
         {
             Close();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if(estudiantesBindingSource.Count > 0)
+            {
+            if(MessageBox.Show("Asegurese de que querer eliminar la informacion del estudiante. Desea eliminar permanentemente este registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)== DialogResult.Yes)
+            {
+                    DataGridViewRow Fila = estudiantesDataGridView.CurrentRow;
+                    Int16 ID = Int16.Parse(Fila.Cells[0].Value.ToString());
+                    string sqlDelete = string.Format("delete from estudiantes where id = {0}", ID);
+                    if(oConexion.AccionSQL(sqlDelete)== true)
+                    {
+                        this.frmEstudiantesList_Load(null, null);
+                        MessageBox.Show("La informacion del estudiante ha sido borrada permanentemente.", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        estudiantesDataGridView.Focus();
+                    }
+                }
+            else
+                {
+                    MessageBox.Show("No hay informacion para eliminarun registro.", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+        }
     }
 }

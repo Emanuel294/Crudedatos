@@ -147,6 +147,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(46, 22);
             this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // toolStripSeparator3
             // 
@@ -161,6 +162,7 @@
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(71, 22);
             this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // toolStripSeparator4
             // 
@@ -175,6 +177,7 @@
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(85, 22);
             this.btnMostrarTodos.Text = "Mostrar todos";
+            this.btnMostrarTodos.Click += new System.EventHandler(this.frmEstudiantesList_Load);
             // 
             // estudiantesDataGridView
             // 

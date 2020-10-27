@@ -100,5 +100,44 @@ namespace ClasesVirtualesProgramacion.Forms
 
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (cmbBuscarPor.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debe seleccionar una de las opciones para buscar un estudiante ya sea por indentidad,nombres o por apellido", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cmbBuscarPor.Focus();
+                return;
+            } else
+            {
+                if (txtCriterio.Text.Trim() == string.Empty)
+                {
+                    MessageBox.Show("Por favor escriba un criterio pra realizar la busqueda de un estudiante", "Buscar",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtCriterio.Focus();
+                    return;
+                }
+                else
+                {
+                    string sqlSelect = string.Empty;
+                    switch (cmbBuscarPor.SelectedIndex)
+                    {
+                        case 0: //identidad
+                            sqlSelect = string.Format("select * from estudiantes where identidad = '{0}'", txtCriterio.Text.Trim());
+                            break;
+                        case 1: //nombre
+                            sqlSelect = string.Format("select * from estudiantes where nombres like '{0}%'", txtCriterio.Text.Trim());
+                            break;
+                        default: //apellidos
+                            sqlSelect = string.Format("select * from estudiantes where apellidos like '{0}%'", txtCriterio.Text.Trim());
+                            break;
+                    }
+                    dsClasesVirtuales.Estudiantes.Clear();
+                    if (oConexion.SelectData(sqlSelect, dsClasesVirtuales.Estudiantes) == true)
+                        estudiantesDataGridView.Focus();
+                }
+
+            }
+        }
     }
 }

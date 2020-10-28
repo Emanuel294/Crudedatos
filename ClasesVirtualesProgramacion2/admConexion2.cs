@@ -62,6 +62,28 @@ namespace ClasesVirtualesProgramacion2
             }
             return ejecucioncorrecta;
         }
+
+        public bool AccionSQL(string SQL)
+        {
+            bool ejecucioncorrecta = false;
+            if(this.AbrirConexion2() == true)
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(SQL, oConexion2);
+                    cmd.ExecuteNonQuery();
+                    ejecucioncorrecta = true;
+                }
+                catch (MySqlException Exception)
+                {
+                    MessageBox.Show(Exception.Message, "Error en SQL de acción", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ejecucioncorrecta = false;
+                    
+                }
+            }
+            return ejecucioncorrecta;
+
+        }
     }
 
  

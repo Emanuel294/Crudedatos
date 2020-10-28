@@ -29,7 +29,7 @@ namespace ClasesVirtualesProgramacion2
                 oConexion2 = new MySqlConnection(cadenadeconexion);
                 oConexion2.Open();
                 conectado = true;
-             
+
             }
             catch (MySqlException Exception)
             {
@@ -40,5 +40,30 @@ namespace ClasesVirtualesProgramacion2
             return conectado;
 
         }
+
+        public bool SelectData(string SQL, DataTable Tabla)
+        {
+            bool ejecucioncorrecta = false;
+            if(this.AbrirConexion2()== true)
+            {
+                try
+                {
+                    MySqlDataAdapter da = new MySqlDataAdapter(SQL, oConexion2);
+                    da.Fill(Tabla);
+                    ejecucioncorrecta = true;
+                        
+                }
+                catch (MySqlException Exception)
+                {
+                    MessageBox.Show(Exception.Message, "Error en SQL", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ejecucioncorrecta = false;
+                    
+                }
+            }
+            return ejecucioncorrecta;
+        }
     }
-}
+
+ 
+   }
+

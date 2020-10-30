@@ -101,5 +101,44 @@ namespace ClasesVirtualesProgramacion2.Forms
                 MessageBox.Show("No hay información para eliminar un registro", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if(cmbBuscarPor.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debe selccionar una de las opciones para buscar en gastos ya sea Categoria, Subcategoria o Descripción", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cmbBuscarPor.Focus();
+                return;
+
+            }else
+            {
+                if (txtCriterio.Text.Trim() == string.Empty)
+                {
+                    MessageBox.Show("Por favor escriba un criterio para realizar la busqueda", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtCriterio.Focus();
+                    return;
+                }
+                else
+                {
+                    string sqlSelect = string.Empty;
+                    switch (cmbBuscarPor.SelectedIndex)
+                    {
+                        case 0: //Categoria
+                            sqlSelect = string.Format("select * from gastos where categoria like '{0}%'", txtCriterio.Text.Trim());
+                            break;
+                        case 1: //Subcategoria
+                            sqlSelect = string.Format("select * from gastos where subcategoria like '{0}%'", txtCriterio.Text.Trim());
+                            break;
+                         default: //Descripcion
+                            sqlSelect = string.Format("select * from gastos where descripcion = '{0}'", txtCriterio.Text.Trim());
+                            break;
+                    }
+                    dsClasesVirtuales.Gastos.Clear();
+                    if (oConexion2.SelectData(sqlSelect, dsClasesVirtuales.Gastos) == true)
+                        gastosDataGridView.Focus();
+                }
+            }
+
+        }
     }
 }

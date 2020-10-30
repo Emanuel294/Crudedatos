@@ -60,7 +60,13 @@ namespace ClasesVirtualesProgramacion2.Forms
                 frmEditar.ShowDialog();
                 if(frmEditar.DialogResult == DialogResult.OK)
                 {
-                    
+                    string sqlUpdate = string.Format("update gastos set fecha = '{0}', categoria = '{1}', subcategoria= '{2}', descripcion = '{3}', valor = '{4}', formapago = '{5}' where id = {6}", frmEditar.fechaDateTimePicker.Value.ToString("yyyy-MM-dd"), frmEditar.categoriaComboBox.Text, frmEditar.subcategoriaComboBox.Text, frmEditar.descripcionTextBox.Text.Trim(), frmEditar.nudValor.Text.Trim(), frmEditar.formapagoComboBox.Text, ID);
+                    if(oConexion2.AccionSQL(sqlUpdate) == true)
+                    {
+                        this.frmGastosList_Load(null, null);
+                        MessageBox.Show("La informacion de gastos ha sido actualizada correctamente.", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        gastosDataGridView.Focus();
+                    }
                 }
 
             
@@ -70,6 +76,30 @@ namespace ClasesVirtualesProgramacion2.Forms
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if(gastosBindingSource.Count > 0)
+            {
+
+            if(MessageBox.Show("Esta seguro que quiere eliminar la informacion de gastos?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                    DataGridViewRow Fila = gastosDataGridView.CurrentRow;
+                    Int16 ID = Int16.Parse(Fila.Cells[0].Value.ToString());
+                    string sqlDelete = string.Format("delete from gastos where id = {0}", ID);
+                    if(oConexion2.AccionSQL(sqlDelete)== true)
+                    {
+                        this.frmGastosList_Load(null, null);
+                        MessageBox.Show("La informacion de gastos ha sido eliminada correctamente.", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        gastosDataGridView.Focus();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay información para eliminar un registro", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

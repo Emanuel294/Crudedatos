@@ -27,6 +27,7 @@ namespace ClasesVirtualesProgramacion2.Dialogs
         {
             return true;
         }
+
         public bool NotificacionDeValidacion(string message, Control objeto)
         {
             MessageBox.Show(message, "Informacion sin ingresar", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -66,7 +66,7 @@
             this.MinimizeBox = false;
             this.Name = "baseDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "baseDialog";
+            this.Text = "Informacion de gastos";
             this.ResumeLayout(false);
 
         }

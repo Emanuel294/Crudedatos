@@ -25,5 +25,51 @@ namespace ClasesVirtualesProgramacion2.Forms
             if (oConexion2.SelectData(SelectSQL, dsClasesVirtuales.Gastos) != true)
                 MessageBox.Show("No se ha podido cargar ningun dato de Gastos, contacte el departamento de desarrollo tecnico", "Sin datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Dialogs.GastosDialog frmNuevo = new Dialogs.GastosDialog();
+            frmNuevo.descripcionTextBox.Focus();
+            frmNuevo.ShowDialog();
+            if(frmNuevo.DialogResult == DialogResult.OK)
+            {
+                string sqlInsert = string.Format("insert into gastos (fecha, categoria, subcategoria, descripcion, valor, formapago) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", frmNuevo.fechaDateTimePicker.Value.ToString("yyyy-MM-dd"), frmNuevo.categoriaComboBox.Text, frmNuevo.subcategoriaComboBox.Text, frmNuevo.descripcionTextBox.Text.Trim(), frmNuevo.nudValor.Text.Trim(), frmNuevo.formapagoComboBox.Text);
+                if(oConexion2.AccionSQL(sqlInsert)== true)
+                {
+                    this.frmGastosList_Load(null, null);
+                    MessageBox.Show("La información de gastos ha sido almacenada correctamente.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    gastosDataGridView.Focus();
+                }
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if(gastosBindingSource.Count > 0)
+            {
+                Dialogs.GastosDialog frmEditar = new Dialogs.GastosDialog();
+                DataGridViewRow Fila = gastosDataGridView.CurrentRow;
+                Int16 ID = Int16.Parse(Fila.Cells[0].Value.ToString());
+                frmEditar.fechaDateTimePicker.Value = Convert.ToDateTime(Fila.Cells[1].Value);
+                frmEditar.categoriaComboBox.Text = Fila.Cells[2].Value.ToString();
+                frmEditar.subcategoriaComboBox.Text = Fila.Cells[3].Value.ToString();
+                frmEditar.descripcionTextBox.Text = Fila.Cells[4].Value.ToString();
+                frmEditar.nudValor.Text = Fila.Cells[5].Value.ToString();
+                frmEditar.formapagoComboBox.Text = Fila.Cells[6].Value.ToString();
+                frmEditar.fechaDateTimePicker.Focus();
+                frmEditar.ShowDialog();
+                if(frmEditar.DialogResult == DialogResult.OK)
+                {
+                    
+                }
+
+            
+            }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
